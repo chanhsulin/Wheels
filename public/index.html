@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Room Interaction App</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Room Interaction</h1>
+    </header>
+
+    <section id="join-section">
+      <input id="name" placeholder="Your name" />
+      <input id="room" placeholder="Room code" />
+      <button id="gen">Generate</button>
+      <button id="join">Join Room</button>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="left">
+        <div class="meta">Room: <span id="room-label"></span></div>
+        <div class="participants">
+          <h3>Participants</h3>
+          <ul id="participants-list"></ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div id="messages" class="messages"></div>
+        <form id="msg-form">
+          <input id="msg-input" autocomplete="off" placeholder="Type a message" />
+          <button>Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <small>Open this page in another browser/window and join the same room code to interact.</small>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
